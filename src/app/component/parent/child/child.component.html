@@ -1,0 +1,16 @@
+<h5>Child Compponent</h5>
+<label for="item-input">Enter your message: </label><br>
+<input input nbInput 
+            type="text" 
+            id="item-input" 
+            placeholder="type here" 
+            #newMessage><br><br>
+<button (click)="addNewMessage(newMessage.value)">
+    Send to parent</button><br><br>
+<span>Message from Parent</span><br>
+<div *ngFor="let message of childData">
+    <p>{{ message.message }}</p>
+
+</div>
+
+    

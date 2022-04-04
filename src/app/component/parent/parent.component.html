@@ -1,0 +1,22 @@
+<h5>Parent Component</h5>
+<form [formGroup]="inputForm">
+<label for="item-input">Enter your message: </label><br>
+<input input nbInput 
+            type="text" 
+            id="item-input" 
+            placeholder="type here" 
+            formControlName="message"><br><br>
+<button  type="submit" (click)="onAdd()">Send to child</button>
+</form>
+<br>
+<br>
+
+<span>Message From Child </span>
+<div *ngFor="let item of items">
+  <p>{{ item }}</p>
+</div>
+<hr>
+  <app-child [childData]="messages"
+             (newItemEvent)="addMessage($event)">
+  </app-child>
+
